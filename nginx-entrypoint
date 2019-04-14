@@ -1,0 +1,10 @@
+#!/bin/bash
+[ -d /etc/nginx/shell.d ] && find /etc/nginx/shell.d -name '*.sh' -exec bash '{}' \;
+[ -d /etc/nginx/pkg.d ] && find /etc/nginx/pkg.d -name '*.deb' -exec dpkg -i '{}' \;
+sed -ri '1i \
+include /etc/nginx/load.d/*.conf;
+' /etc/nginx/nginx.conf
+mkdir -p /etc/nginx/load.d
+touch /etc/nginx/load.d/00-empty.conf
+echo "$@"
+exec "$@"
