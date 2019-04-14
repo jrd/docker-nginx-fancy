@@ -21,3 +21,10 @@ Extra configuration
 
 Any `.conf` file in `/etc/nginx/load.d/` directory will be included in the main `nginx.conf` file.
 An empty `00-empty.conf` file is present by default.
+
+Docker tags
+-----------
+* `latest`, `1.15`, `1.14`
+* `alpine`, `1.15-alpine`, `1.14-alpine`
+* `perl`, `1.15-perl`, `1.14-perl`
+* `alpine-perl`, `1.15-alpine-perl`, `1.14-alpine-perl`
