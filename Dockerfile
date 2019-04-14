@@ -6,7 +6,7 @@ RUN echo "#!/bin/sh\n"'exec "$@"' > /usr/local/bin/sudo && chmod +x /usr/local/b
 RUN /bin/bash -c "./build_module.sh -n fancyindex -y -v \${NGINX_VERSION//-*} -o /root/ https://github.com/aperezdc/ngx-fancyindex.git"
 RUN dpkg -i /root/*.deb
 
-FROM nginx:latest
+FROM nginx:alpine
 COPY nginx-entrypoint /
 RUN chmod +x nginx-entrypoint
 ENTRYPOINT ["/nginx-entrypoint"]
