@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 [ -d /etc/nginx/shell.d ] && find /etc/nginx/shell.d -name '*.sh' -exec bash '{}' \;
 [ -d /etc/nginx/pkg.d ] && find /etc/nginx/pkg.d -name '*.deb' -exec dpkg -i '{}' \;
 sed -ri '1i \
