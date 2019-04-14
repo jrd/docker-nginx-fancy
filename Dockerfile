@@ -1,4 +1,4 @@
-FROM nginx:latest
+FROM nginx:1.14
 WORKDIR /root
 RUN apt-get update && apt-get install -y curl
 RUN curl 'https://hg.nginx.org/pkg-oss/raw-file/tip/build_module.sh' > build_module.sh && chmod +x build_module.sh
