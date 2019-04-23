@@ -1,6 +1,9 @@
 nginx with fancy index module
 =============================
 
+[![](https://images.microbadger.com/badges/version/jrdasm/nginx-fancy.svg)](https://microbadger.com/images/jrdasm/nginx-fancy "Get your own version badge on microbadger.com")
+[![](https://images.microbadger.com/badges/image/jrdasm/nginx-fancy.svg)](https://microbadger.com/images/jrdasm/nginx-fancy "Get your own image badge on microbadger.com")
+
 This is the regular nginx docker with the [Fancy Index module](https://www.nginx.com/resources/wiki/modules/fancy_index/) already available and loaded.
 
 Please see the fancy index documentation for configuration.
