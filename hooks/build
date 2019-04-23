@@ -1,0 +1,8 @@
+#!/bin/bash
+# $DOCKERFILE_PATH and $IMAGE_NAME vars are injected: https://docs.docker.com/docker-hub/builds/advanced/
+docker build \
+  --build-arg VERSION=$(grep '^FROM ' Dockerfile|tail -n1|cut -d: -f2) \
+  --build-arg BUILD_DATE=$(date -u '+%FT%TZ') \
+  --build-arg VCS_REF=$(git rev-parse --short HEAD) \
+  --build-arg VCS_URL=$(git config --get remote.origin.url) \
+  -f $DOCKERFILE_PATH -t $IMAGE_NAME .
