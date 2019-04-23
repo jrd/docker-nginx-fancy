@@ -14,3 +14,16 @@ CMD ["nginx", "-g", "daemon off;"]
 COPY --from=0 /etc/nginx/modules/ngx_http_fancyindex_module.so /etc/nginx/modules/ngx_http_fancyindex_module.so
 COPY fancyindex.conf /etc/nginx/load.d/fancyindex.conf
 RUN sed -ri '/index  index\.html/a         fancyindex on;\n        fancyindex_exact_size off;\n' /etc/nginx/conf.d/default.conf
+ARG VERSION
+ARG BUILD_DATE
+ARG VCS_REF
+ARG VCS_URL
+LABEL maintainer="Cyrille Pontvieux <cyrille@enialis.net>" \
+      org.label-schema.schema-version="1.0" \
+      org.label-schema.name="nginx-fancy" \
+      org.label-schema.description="nginx with fancy index module" \
+      org.label-schema.url=$VCS_URL \
+      org.label-schema.version=$VERSION \
+      org.label-schema.build-date=$BUILD_DATE \
+      org.label-schema.vcs-ref=$VCS_REF \
+      org.label-schema.vcs-url=$VCS_URL
